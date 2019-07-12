@@ -54,14 +54,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumQuesThree = sum(a,b);
-  var sumQuesTotal = sum(sumQuesThree[0],c);
-  console.log(sumQuesTotal);
-  var mulQuesThree = multiply(a,b,c);
-  var thirdString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumQuesThree + '.';
-  var fourthString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulQuesThree + '.';
+  var sumQuesThree = parseInt(sum(a,b));
+    sumTotal = parseInt(sum(sumTotal[0],c));
 
-  return [thirdString, fourthString];
+  var mulQuesThree = parseInt(multiply(a,b));
+    mulQuesTotal = parseInt(multiply(mulQuesThree,c));
+
+  var thirdString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumQuesTotal + '.';
+  var fourthString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulQuesTotal + '.';
+
+  console.log(sumQuesTotal, mulQuesTotal, thirdString, fourthString);
+  return [sumQuesTotal, mulQuesTotal, thirdString, fourthString];
 
 }
 
