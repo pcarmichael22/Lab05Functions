@@ -7,7 +7,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
-// Write your code here
+// // Write your code here
 function sum(a, b) { //eslint-disable-line
   var addSum = a + b;
   var answer = 'The sum of ' + a + ' and ' + b + ' is ' + addSum + '.';
@@ -28,7 +28,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
-// Write your code here
+// // Write your code here
 function multiply(a, b) { //eslint-disable-line
   var mulNum = a*b;
   var answer2 = 'The product of ' + a + ' and ' + b + ' is ' + mulNum + '.';
@@ -52,19 +52,19 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
-// Write your code here
+// // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumQuesThree = parseInt(sum(a,b));
-    sumTotal = parseInt(sum(sumTotal[0],c));
+  var sumTotal = parseInt(sum(a,b)[0]);
+     sumTotal = parseInt(sum(sumTotal,c)[0]);
 
-  var mulQuesThree = parseInt(multiply(a,b));
-    mulQuesTotal = parseInt(multiply(mulQuesThree,c));
+  var mulQuesThree = parseInt(multiply(a,b)[0]);
+    var mulQuesTotal = parseInt(multiply(mulQuesThree,c)[0]);
 
-  var thirdString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumQuesTotal + '.';
+  var thirdString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumTotal + '.';
   var fourthString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulQuesTotal + '.';
 
-  console.log(sumQuesTotal, mulQuesTotal, thirdString, fourthString);
-  return [sumQuesTotal, mulQuesTotal, thirdString, fourthString];
+  console.log(sumTotal, mulQuesTotal, thirdString, fourthString);
+  return [sumTotal, mulQuesTotal, thirdString, fourthString];
 
 }
 
@@ -83,16 +83,27 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here
+var i =0
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(sumArr) {
+    var total = 0;
+    for(var i=0; i < sumArr.length; i++){
+        total += (testArray[i]);
+    }
+
+    console.log(sumArr);
+
+    var stringAns = sumArr + ' was passed in as an array of numbers, and ' + total + ' is their sum.';
+    console.log(total, stringAns);
+
+    return [total, stringAns];
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
